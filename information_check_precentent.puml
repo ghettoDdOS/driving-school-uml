@@ -1,0 +1,15 @@
+@startuml
+actor Администратор
+participant "Система автошколы" as system
+database "База данных" as database
+activate Администратор
+Администратор -> system: Просмотр информации об ученике
+activate system
+system -> database: Запрос информации из БД
+activate database
+database --> system: Передача информации из БД
+deactivate database
+system --> Администратор: Отображение информации о ученике
+deactivate system
+deactivate Администратор
+@enduml
